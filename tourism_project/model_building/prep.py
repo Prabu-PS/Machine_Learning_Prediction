@@ -15,11 +15,7 @@ df = pd.read_csv(DATASET_PATH)
 print("✅ Dataset loaded successfully from Hugging Face.")
 
 # Drop the unique identifier
-df.drop(columns=['UDI'], inplace=True)
-
-# Encode categorical 'Type' column
-label_encoder = LabelEncoder()
-df['Type'] = label_encoder.fit_transform(df['Type'])
+df.drop(columns=['CustomerID'], inplace=True)
 
 target_col = 'ProdTaken'
 
